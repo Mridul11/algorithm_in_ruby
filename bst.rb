@@ -42,9 +42,8 @@ class Bst
 
     def traverse
         current = @root 
-        p current.value
         while current.left != nil 
-            p current.left.value
+            p current.value
             current = current.left
         end
         current = @root 
