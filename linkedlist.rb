@@ -37,7 +37,6 @@ class LinkedList
     def unshift
         current = @head 
         if current != nil 
-            # tmp = current 
             tmp_next = current.next_node 
             @head = tmp_next
         end
@@ -54,7 +53,7 @@ class LinkedList
     end
 end
 
-ll = LinkedList.new 0
+ll = LinkedList.new -1
 
 5.times do |i| 
     ll.add i 

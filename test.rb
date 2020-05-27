@@ -24,3 +24,5 @@ q << 12
 q << 13 
 p q.pop 
 p q
+
+hash.each { |k,v| p " Key is #{k} and value is #{v}"}
