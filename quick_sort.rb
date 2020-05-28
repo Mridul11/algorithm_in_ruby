@@ -25,15 +25,24 @@ class Quicksort
 end
 
 qck = Quicksort.new 
-arr = [10, 7, 8, 9, 1, 5] 
+# arr = [10, 7, 8, 9, 1, 5] 
+arr = Array.new(1000000) { rand(1...10000) }
 
 n = arr.count 
-qck.quick(arr, 0, n-1)
+p Time.now  
 
-p "Sorted array is: "
+p qck.quick(arr, 0, n-1)
 
-for i in 0...n 
-    p arr[i]
-end
+p "Sorted array is: " + arr.to_s
+
+p Time.now 
+
+=begin
+p arr.nil?
+p arr.include?(1)
+p "Mridul".include?("M")
+=end
+
+# p Array.new(100) { rand(1...10000) }
 
 
