@@ -7,16 +7,20 @@ class Node
 end
 
 class LinkedList
+    attr_accessor :head , :tail 
     def initialize(value)
         @head = Node.new value         
+        @tail = nil 
     end
 
     def add val 
         current = @head 
+        @tail = current
         while !current.next_node.nil?
             current  = current.next_node
         end
         current.next_node = Node.new val
+        @tail = current.next_node
     end
 
     def shift val 
@@ -32,6 +36,16 @@ class LinkedList
                 break
             end
         end
+    end
+
+    def pop
+        current = @head
+        while current.next_node != nil 
+            previous = current
+            current = current.next_node
+        end
+        previous.next_node = nil 
+        p previous, current
     end
 
     def unshift
@@ -53,15 +67,25 @@ class LinkedList
     end
 end
 
-ll = LinkedList.new -1
+sll = LinkedList.new -1
 
 5.times do |i| 
-    ll.add i 
+    sll.add i 
 end
 
-# ll.show 
-ll.shift 121
-ll.show 
+sll.show 
+
 p "========================"
-ll.unshift
-ll.show
+sll.shift 121
+sll.show 
+
+p "========================"
+sll.unshift
+sll.show
+
+p "========================"
+sll.pop 
+sll.show
+
+p "========================"
+p sll.tail 

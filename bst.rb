@@ -60,8 +60,8 @@ class Bst
             return self.find(node.right, val) if val > node.value 
         rescue
             return "Not Found" if node.value != val 
-        # ensure
-        #     p "Ensure to always print"
+        # ensure 
+        #     p "Ensure to always print" 
         end
     end
 
